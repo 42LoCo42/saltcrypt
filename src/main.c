@@ -98,8 +98,7 @@ int main(int argc, char** argv) {
 			   ) < 0)
 				diex("decode pubkey.b64 failed");
 
-			///// encrypt the master to the current public key & output that
-			////////
+			///// encrypt the master to the current public key & output /////
 			unsigned char sym_key_enc[sizeof(sym_key) + crypto_box_SEALBYTES] =
 				{0};
 			if(crypto_box_seal(sym_key_enc, sym_key, sizeof(sym_key), pubkey) <
@@ -190,7 +189,7 @@ int main(int argc, char** argv) {
 		char*  raw      = malloc(raw_size);
 		if(raw == NULL) die("malloc %zu for raw", raw_size);
 
-		///// decrypt % output /////
+		///// decrypt & output /////
 		if(crypto_secretbox_open_easy(
 			   (unsigned char*) raw, (unsigned char*) enc, enc_size, nonce,
 			   sym_key

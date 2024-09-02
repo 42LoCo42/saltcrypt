@@ -15,6 +15,8 @@
             libsodium
           ];
 
+          CFLAGS = "-O3";
+
           doCheck = true;
           stripDebugFlags = [ "-s" ];
         };

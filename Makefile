@@ -1,6 +1,6 @@
 NAME    := saltcrypt
 DEPS    := libsodium
-CFLAGS  := $(CFLAGS)  -Wall -Wextra -Werror -O3
+CFLAGS  := $(CFLAGS)  -Wall -Wextra -Werror -g
 LDFLAGS := $(LDFLAGS)
 
 ################################################################################
