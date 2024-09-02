@@ -14,6 +14,8 @@
           buildInputs = with pkgs; [
             libsodium
           ];
+
+          doCheck = true;
         };
 
         devShells.default = pkgs.mkShell {

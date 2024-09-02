@@ -34,6 +34,10 @@ run: $(NAME)
 	./$<
 .PHONY: run
 
+check: $(NAME)
+	$(SHELL) check.sh
+.PHONY: check
+
 install: $(NAME)
 	mkdir -p $(out)/bin
 	cp $< $(out)/bin
