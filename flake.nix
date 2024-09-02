@@ -16,6 +16,7 @@
           ];
 
           doCheck = true;
+          stripDebugFlags = [ "-s" ];
         };
 
         devShells.default = pkgs.mkShell {
