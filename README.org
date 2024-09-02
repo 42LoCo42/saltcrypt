@@ -2,6 +2,12 @@
 a very simple file encryption tool
 inspired by [[https://github.com/FiloSottile/age][age]] and based on [[https://doc.libsodium.org/][libsodium]]
 
+generates a header of =41 + count · 80= bytes,
+compared to age's header of =102 + count · 110= bytes
+(for a given =count= of recipients/public keys to encrypt to)
+
+smol :3
+
 ** Usage
 #+begin_src sh
   nix shell github:42loco42/saltcrypt
