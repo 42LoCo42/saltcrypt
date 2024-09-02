@@ -1,0 +1,25 @@
+* saltcrypt
+a very simple file encryption tool
+inspired by [[https://github.com/FiloSottile/age][age]] and based on [[https://doc.libsodium.org/][libsodium]]
+
+** Usage
+#+begin_src sh
+  nix shell github:42loco42/saltcrypt
+
+  # genkey prints pubkey on stderr
+  saltcrypt genkey >key0
+  # A1kAatau7vqmVFPtKsBgWv1tDZStEBQ2IUeXoXVm_zU
+  saltcrypt genkey >key1
+  # uN0ytWD0P8xjDvVIuZ4bhhTQN0-WDAqv4JdCZWJKLTU
+
+  # encrypt to a set of public keys ("recipients")
+  saltcrypt encrypt yourfile \
+      A1kAatau7vqmVFPtKsBgWv1tDZStEBQ2IUeXoXVm_zU \
+      uN0ytWD0P8xjDvVIuZ4bhhTQN0-WDAqv4JdCZWJKLTU \
+      >yourfile.enc
+
+  # decrypt tries the key with all recipients
+  # until it finds a matching one
+  saltcrypt decrypt yourfile.enc key0
+  saltcrypt decrypt yourfile.enc key1
+#+end_src
