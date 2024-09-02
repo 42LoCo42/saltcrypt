@@ -1,0 +1,8 @@
+/.cache
+/.direnv
+/build
+/compile_commands.json
+/enc
+/key
+/raw
+/result
